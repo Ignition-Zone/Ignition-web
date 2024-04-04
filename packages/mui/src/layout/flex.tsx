@@ -2,6 +2,7 @@ import React from "react";
 import { createReactMaterial } from "@huos/core";
 import { Flex, FlexProps, Select } from "antd";
 import { BooleanSetter, NumberSetter, RenderFieldSetter, StringSetter } from "@huos/setter";
+import { flexIcon } from "@/assets/icon";
 
 export const MUI_Flex = createReactMaterial<FlexProps>(
   (props: FlexProps, ref: any) => (
@@ -62,9 +63,7 @@ export const MUI_Flex = createReactMaterial<FlexProps>(
       ),
       icon: () => (
         <img
-          height={30}
-          width={30}
-          src="https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*7va7RKs3YzIAAAAAAAAAAAAADrJ8AQ/original"
+          src={flexIcon}
         />
       ),
     },

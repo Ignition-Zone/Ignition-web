@@ -84,9 +84,9 @@ export const CanvasTree = () => {
     <Flex className={classes.tree} vertical gap={12}  >
       <Flex justify="space-around" gap={12}>
         <Input placeholder="请输入组件名称" suffix={<SearchOutlined />} />
-        <Space>
+        {/* <Space>
           <Button icon={<ClearOutlined />} />
-        </Space>
+        </Space> */}
       </Flex>
       <ConfigProvider
         theme={{
@@ -110,7 +110,7 @@ export const CanvasTree = () => {
           <Menu
             mode="inline"
             items={menuItems}
-            inlineIndent={12}
+            inlineIndent={6}
             openKeys={menuOpenKeys}
             expandIcon={<HuosRemixIcon type="icon-arrow-down-s-line" />}
             selectable={false}

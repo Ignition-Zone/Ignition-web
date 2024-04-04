@@ -11,7 +11,8 @@ export const Tree = () => {
 
   return (
     <div style={{ height: "100%" }}>
-      <SplitPane
+      <CanvasTree />
+      {/* <SplitPane
         split="horizontal"
         sizes={sizes}
         onChange={setSizes}
@@ -25,7 +26,7 @@ export const Tree = () => {
         <Pane minSize="30%" style={{ overflow: "auto" }}>
           <DepTree />
         </Pane>
-      </SplitPane>
+      </SplitPane> */}
     </div>
   );
 };

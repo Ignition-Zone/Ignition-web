@@ -9,7 +9,7 @@ import {
   Request,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { AuthGuard } from './auth. guard';
+import { AuthGuard } from './auth.guard';
 import { SignInDto, SignInResDto } from './dto/signin-dto';
 import { ApiResponse } from '@nestjs/swagger';
 

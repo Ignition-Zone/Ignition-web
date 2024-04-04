@@ -10,7 +10,9 @@ import {
   StyleProvider,
   createCache as createCacheByAntd,
 } from "@ant-design/cssinjs";
-import { ConfigProvider } from "antd";
+import { Cascader, ConfigProvider, Dropdown, Select, Space } from "antd";
+import { ModalForm, ProFormCascader } from "@ant-design/pro-components";
+import { DownOutlined, SmileOutlined } from "@ant-design/icons";
 
 export interface IFrameProps {
   children?: React.ReactNode;
@@ -95,7 +97,7 @@ export const IFrame: React.FC<IFrameProps> = (props) => {
           return (
             <ConfigProvider
               getPopupContainer={() =>
-                _document ? _document.body : document.body
+                _document?.body as any
               }
             >
               <StyleProvider
@@ -103,11 +105,7 @@ export const IFrame: React.FC<IFrameProps> = (props) => {
                 container={_document?.body}
                 cache={antdCache}
               >
-                <CacheProvider value={cache}>
-                  <StyleProvider cache={antdCache}>
-                    {props.children}
-                  </StyleProvider>
-                </CacheProvider>
+                <CacheProvider value={cache}>{props.children}</CacheProvider>
               </StyleProvider>
             </ConfigProvider>
           );

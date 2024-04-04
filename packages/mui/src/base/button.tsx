@@ -7,6 +7,8 @@ import {
   toOptions,
 } from "@huos/setter";
 import { Button, ButtonProps, Input, Segmented, Select } from "antd";
+import { buttonIcon } from '@/assets/icon'
+
 
 export const MUI_Button = createReactMaterial<ButtonProps>(
   (props: ButtonProps, ref: any) => (
@@ -62,7 +64,7 @@ export const MUI_Button = createReactMaterial<ButtonProps>(
           <StringSetter label="按钮文字" name="$$children" initialValue="默认按钮" />
         </React.Fragment>
       ),
-      icon: () => <img height={30} width={30} src="https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*7va7RKs3YzIAAAAAAAAAAAAADrJ8AQ/original" />
+      icon: () => <img height="100%" width="100%" src={buttonIcon} />
     },
   },
   {

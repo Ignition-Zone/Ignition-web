@@ -12,6 +12,7 @@ import {
   CaretUpOutlined,
   CloseOutlined,
   EditOutlined,
+  PlusOutlined,
 } from "@ant-design/icons";
 import _, { merge } from "lodash";
 import { css } from "@emotion/css";
@@ -187,12 +188,14 @@ export const EventsPanel = () => {
                               </Flex>
                             </Flex>
                           ))}
-                          <Button block type="primary" onClick={() => actions.add({
+                          <Flex justify="center" >
+                          <Button ghost type="primary" onClick={() => actions.add({
                             name: '',
                             fn: ''
-                          })}>
-                            新增
+                          })} icon={<PlusOutlined/>}>
+                            新增事件
                           </Button>
+                          </Flex>
                         </Flex>
                       );
                     }}

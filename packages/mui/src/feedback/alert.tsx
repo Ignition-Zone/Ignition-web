@@ -27,7 +27,7 @@ export const MUI_Alert = createReactMaterial<AlertProps>(
           <BooleanSetter name='closable' label="关闭配置" />
           <StringSetter name="description" label="提示描述"/>
           <StringSetter name="message" label="提示内容"/>
-          <RenderFieldSetter>
+          <RenderFieldSetter name="type" label="提示类型" >
             <Select style={{ width: '100%' }} options={[
               {
                 label: '成功',
@@ -49,7 +49,7 @@ export const MUI_Alert = createReactMaterial<AlertProps>(
           
         </React.Fragment>
       ),
-      icon: () => <img height={30} width={30} src="https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*7va7RKs3YzIAAAAAAAAAAAAADrJ8AQ/original" />
+      icon: () => <img src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3QgeD0iMy4yIiB5PSIxNC4yIiB3aWR0aD0iNDIuNiIgaGVpZ2h0PSIyMC42IiByeD0iNC44IiBmaWxsPSIjZmZmIiBzdHJva2U9IiNEOEQ4RDgiIHN0cm9rZS13aWR0aD0iMS42Ii8+PGNpcmNsZSBjeD0iMTIiIGN5PSIyNCIgcj0iNiIgZmlsbD0iI0ZCRURDOCIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMjgiIHI9IjEiIGZpbGw9IiNDMDg4MTEiLz48cGF0aCBkPSJNMTIgMjB2NiIgc3Ryb2tlPSIjQzA4ODExIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBzdHJva2U9IiM4RThFOEUiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTIyIDIyaDExIi8+PHBhdGggc3Ryb2tlPSIjREVERURFIiBzdHJva2Utd2lkdGg9IjIiIGQ9Ik0yMiAyN2gxOSIvPjwvc3ZnPgo=' />
     },
   },
 );

@@ -91,9 +91,7 @@ export const MUI_InputNumber = createReactMaterial<InputNumberProps>(
       ),
       icon: () => (
         <img
-          height={30}
-          width={30}
-          src="https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*7va7RKs3YzIAAAAAAAAAAAAADrJ8AQ/original"
+          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3QgeD0iMSIgeT0iMTUiIHdpZHRoPSI0NiIgaGVpZ2h0PSIxOCIgcng9IjMiIGZpbGw9IiNGQ0ZDRkMiIHN0cm9rZT0iI0RFREVERSIgc3Ryb2tlLXdpZHRoPSIxLjYiLz48cGF0aCBkPSJNNC41IDI2LjA2aDguNTU1TTExLjYyOSAxOS41bC0xLjQyNiA4LjU1NU04LjA2NCAxOS41bC0xLjQyNiA4LjU1NU01LjIxMyAyMi4wNjdIMTMuNSIgc3Ryb2tlPSIjQjJCMkIyIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggc3Ryb2tlPSIjRDhEOEQ4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgZD0iTTIxIDI0aDEyIi8+PHBhdGggZD0iTTM4IDIwaDEuNW0xLjUgMGgtMS41bTAgMHY4bTAgMEgzOG0xLjUgMEg0MSIgc3Ryb2tlPSIjOTQ5NDk0IiBzdHJva2Utd2lkdGg9IjEuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+Cg=="
         />
       ),
     },

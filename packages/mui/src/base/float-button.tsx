@@ -7,6 +7,7 @@ import {
   toOptions,
 } from "@huos/setter";
 import { FloatButton, FloatButtonProps } from "antd";
+import { floatBtnIcon } from '@/assets/icon'
 
 export const MUI_FloatButton = createReactMaterial<FloatButtonProps>(
   (props: FloatButtonProps, ref: any) => (
@@ -20,7 +21,7 @@ export const MUI_FloatButton = createReactMaterial<FloatButtonProps>(
           111
         </React.Fragment>
       ),
-      icon: () => <img height={30} width={30} src="https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*7va7RKs3YzIAAAAAAAAAAAAADrJ8AQ/original" />
+      icon: () => <img src={floatBtnIcon} height="100%" width="100%" />
     },
   }
 );

@@ -3,6 +3,7 @@ import { createReactMaterial } from "@huos/core";
 import { Divider, DividerProps, Segmented } from "antd";
 import { BooleanSetter, RenderFieldSetter, StringSetter } from "@huos/setter";
 import { AlignLeftOutlined, AlignCenterOutlined, AlignRightOutlined } from '@ant-design/icons'
+import { dividerIcon } from "@/assets/icon";
 
 export const MUI_Divider = createReactMaterial<DividerProps>(
   (props: DividerProps, ref: any) => (
@@ -40,7 +41,7 @@ export const MUI_Divider = createReactMaterial<DividerProps>(
           <StringSetter name="$$children" label="文本内容" />
         </React.Fragment>
       ),
-      icon: () => <img height={30} width={30} src="https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*7va7RKs3YzIAAAAAAAAAAAAADrJ8AQ/original" />
+      icon: () => <img src={dividerIcon} />
     },
   }
 );

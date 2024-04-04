@@ -28,7 +28,7 @@ export const MUI_Skeleton = createReactMaterial<SkeletonProps>(
 
         </React.Fragment>
       ),
-      icon: () => <img height={30} width={30} src="https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*7va7RKs3YzIAAAAAAAAAAAAADrJ8AQ/original" />
+      icon: () => <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3QgeD0iMy4yIiB5PSIzLjIiIHdpZHRoPSI0MS42IiBoZWlnaHQ9IjQxLjYiIHJ4PSI0LjgiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI0Q4RDhEOCIgc3Ryb2tlLXdpZHRoPSIxLjYiLz48cGF0aCBkPSJNOCAxMHY1YTIgMiAwIDAgMCAyIDJoMjhhMiAyIDAgMCAwIDItMnYtNWEyIDIgMCAwIDAtMi0ySDEwYTIgMiAwIDAgMC0yIDJaTTggMjJ2NWEyIDIgMCAwIDAgMiAyaDI4YTIgMiAwIDAgMCAyLTJ2LTVhMiAyIDAgMCAwLTItMkgxMGEyIDIgMCAwIDAtMiAyWk04IDM0djVhMiAyIDAgMCAwIDIgMmgyOGEyIDIgMCAwIDAgMi0ydi01YTIgMiAwIDAgMC0yLTJIMTBhMiAyIDAgMCAwLTIgMloiIGZpbGw9IiNFRUUiLz48L3N2Zz4K" />
     },
   },
   {

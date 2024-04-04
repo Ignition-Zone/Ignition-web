@@ -1,5 +1,6 @@
 import React from "react";
 import { ReactMaterialViewType } from "@huos/core";
+import { ConfigProvider } from "antd";
 
 export const ProviderView: ReactMaterialViewType<
   React.CSSProperties & {
@@ -11,8 +12,13 @@ export const ProviderView: ReactMaterialViewType<
   console.log(props, 'props')
 
   return (
-    <div ref={ref} style={{ ...props, ...style, boxSizing: 'border-box' }}>
+    <ConfigProvider getPopupContainer={(node) => {
+      console.log(node, 'node')
+      return document.body
+    }} >
+      <div ref={ref} style={{ ...props, ...style, boxSizing: 'border-box' }}>
       {children}
     </div>
+    </ConfigProvider>
   );
 };

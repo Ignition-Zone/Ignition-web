@@ -1,7 +1,6 @@
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 import { devtools } from 'zustand/middleware'
-import { SerializedNodes } from "@craftjs/core";
 import dayjs from "dayjs";
 
 export interface LocaleDataRecordType {

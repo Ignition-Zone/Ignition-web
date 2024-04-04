@@ -17,7 +17,7 @@ export const TreeNode: React.FC<TreeNodeProps> = (props) => {
 
   return (
     <Flex gap={4} >
-      {NodeIcon ? React.cloneElement(<NodeIcon/>) : null}
+      {/* {NodeIcon ? React.cloneElement(<NodeIcon/>) : null} */}
       <Flex gap={4} >
         <Typography.Text>{NodeHelper.data.displayName}</Typography.Text>
         <Typography.Text style={{ fontSize: '90%' }} type="secondary" >({props.nodeId})</Typography.Text>

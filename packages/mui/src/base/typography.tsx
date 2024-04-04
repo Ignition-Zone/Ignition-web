@@ -7,6 +7,7 @@ import {
   toOptions,
 } from "@huos/setter";
 import { Segmented, Select, Typography } from "antd";
+import { textIcon } from "@/assets/icon";
 
 const levelOptions = [1, 2, 3, 4, 5].map((level) => ({
   label: 'H' + level,
@@ -63,7 +64,7 @@ export const MUI_Title = createReactMaterial<TitleProps>(
 
         </React.Fragment>
       ),
-      icon: () => <img height={30} width={30} src="https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*7va7RKs3YzIAAAAAAAAAAAAADrJ8AQ/original" />
+      icon: () => <img src={textIcon} />
     },
   },
   {

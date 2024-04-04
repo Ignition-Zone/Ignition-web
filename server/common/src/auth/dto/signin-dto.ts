@@ -13,7 +13,7 @@ export class SignInDto {
   password: string;
 }
 
-class SignInResDO {
+export class SignInResDO {
   @ApiProperty({
     description: 'token',
   })
