@@ -59,6 +59,7 @@ export const LayoutSetter = {
             "marginLeft",
           ].map((propKey) => (
             <ProFormDigit
+              key={propKey}
               formItemProps={{ noStyle: true }}
               fieldProps={{
                 placeholder: propKey.charAt(6),
@@ -78,6 +79,7 @@ export const LayoutSetter = {
             "paddingLeft",
           ].map((propKey) => (
             <ProFormDigit
+              key={propKey}
               formItemProps={{ noStyle: true }}
               fieldProps={{
                 placeholder: propKey.charAt(7),

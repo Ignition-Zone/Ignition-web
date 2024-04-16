@@ -1,27 +1,27 @@
 import React from "react";
 import { createReactMaterial } from "@huos/core";
-import { Cascader, CascaderProps, Segmented, Select } from "antd";
+import { Cascader, CascaderProps, Segmented, Select, Tooltip } from "antd";
 import {
   BooleanSetter,
   NumberSetter,
   RenderFieldSetter,
   StringSetter,
 } from "@huos/setter";
+import { Select as MantSelect } from '@mantine/core'
 
 export const MUI_Cascader = createReactMaterial<CascaderProps>(
   (props: CascaderProps, ref: any) => (
-    <div ref={ref} style={{}} >
-      <Select style={{ width: 200 }} >
-        <Select.Option key={1} >1</Select.Option>
-        <Select.Option key={2} >2</Select.Option>
-      </Select>
-    </div>
+    <MantSelect ref={ref} label="Your favorite library"
+    placeholder="Pick value"
+    data={['React', 'Angular', 'Vue', 'Svelte']} ></MantSelect>
   ),
   {
     displayName: "级联选择",
     props: {
       style: {
-      }
+        
+      },
+      placeholder: '1'
     },
     related: {
       settingRender: () => (

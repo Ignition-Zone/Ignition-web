@@ -2,11 +2,10 @@
 import * as React from "react";
 import { useNode, useEditor } from "@craftjs/core";
 import ReactDOM from "react-dom";
-import { ArrowUpOutlined, CloseOutlined, DeleteOutlined, DragOutlined, PlusOutlined } from "@ant-design/icons";
+import { ArrowUpOutlined, CloseOutlined, DeleteOutlined, DragOutlined } from "@ant-design/icons";
 import { Button, Flex, Typography, theme } from "antd";
 import { css } from "@emotion/react";
 import { HuosRemixIcon } from "@huos/icons";
-import { InsertComponentModal } from './modal'
 
 export interface RenderNodeWrapperProps {
   render: React.ReactElement;
@@ -74,6 +73,69 @@ export const CustomNodeRender: React.FC<RenderNodeWrapperProps> = ({
 
   return (
     <>
+      {dom && isActive && !isRootNode
+        ? ReactDOM.createPortal(
+            <div
+              css={css({
+                position: "absolute",
+                bottom: -33,
+                left: 0,
+                background: theme.getDesignToken().colorPrimary,
+                display: "flex",
+                width: "max-content",
+                zIndex: 10000,
+                pointerEvents: "none",
+                borderRadius: 4,
+                fontSize: 12,
+                color: "#FFF",
+                padding: 4,
+              })}
+            >
+              <Flex
+                align="center"
+                gap={6}
+                css={css({
+                  pointerEvents: "auto",
+                  color: "#FFF",
+                  width: "max-content",
+                  paddingInlineStart: 6
+                })}
+              >
+                <Typography.Text style={{ fontSize: 13, color: "#FFF" }}>
+                  {name}
+                </Typography.Text>
+                <Flex>
+                {moveable ? (
+                  <Button
+                    ref={(_dom: HTMLElement) => drag(_dom)}
+                    size="small"
+                    type="text"
+                    icon={<DragOutlined style={{ color: "#FFF" }} />}
+                  />
+                ) : null}
+                <Button
+                  size="small"
+                  type="text"
+                  icon={<ArrowUpOutlined style={{ color: "#FFF" }} />}
+                  onClick={() => {
+                    actions.selectNode(parent as string);
+                  }}
+                />
+                <Button
+                  size="small"
+                  type="text"
+                  icon={<DeleteOutlined style={{ color: "#FFF" }} />}
+                  onMouseDown={(e: React.MouseEvent) => {
+                    e.stopPropagation();
+                    actions.delete(id);
+                  }}
+                />
+                </Flex>
+              </Flex>
+            </div>,
+            dom!
+          )
+        : null}
       {render}
     </>
   );

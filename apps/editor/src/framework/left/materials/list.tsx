@@ -10,17 +10,17 @@ import {
   FeedbackMaterials,
   NavMaterials,
 } from "@huos/mui";
-import _ from 'lodash'
+import _ from "lodash";
 
 const marerials = {
-  '基础组件': BaseMaterials,
-  "布局组件": LayoutMaterials,
-  "数据展示": DataDisplayMaterials,
-  "数据录入": DataEntryMaterials,
-  "反馈组件": FeedbackMaterials,
-  "导航组件": NavMaterials,
-  "其他组件": OtherMaterials
-}
+  基础组件: BaseMaterials,
+  布局组件: LayoutMaterials,
+  数据展示: DataDisplayMaterials,
+  数据录入: DataEntryMaterials,
+  反馈组件: FeedbackMaterials,
+  导航组件: NavMaterials,
+  其他组件: OtherMaterials,
+};
 
 const classes = {
   list: css({
@@ -36,14 +36,9 @@ export const MaterialList = () => {
 
   return (
     <Flex vertical gap={12} className={classes.list}>
-      {
-        _.map(marerials, (value, key) => {
-          return (
-            <MaterialGroup groupName={key} groupList={value} />
-          )
-        })
-      }
-
+      {_.map(marerials, (value, key) => {
+        return <MaterialGroup key={key} groupName={key} groupList={value} />;
+      })}
       <div style={{ paddingBottom: 12 }}>
         <Card size="small">
           <Flex justify="center">

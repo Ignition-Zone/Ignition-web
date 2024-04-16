@@ -4,10 +4,11 @@ import { css } from "@emotion/css";
 import { IFrame as RenderViewSanBox } from "./iframe";
 import { DocumentNodes } from "./document";
 import { useEditorKeyPress } from "../hooks/use-keyword-panel";
-import { Settings } from '../settings'
+import { Settings } from "../settings";
+import { MantineProvider } from "@mantine/core";
 
 export const Canvas = () => {
-  const ref = React.useRef<HTMLDivElement>(null)
+  const ref = React.useRef<HTMLDivElement>(null);
   const { token } = theme.useToken();
 
   useEditorKeyPress();
@@ -19,7 +20,7 @@ export const Canvas = () => {
       background: "#f9fafb",
       height: "100%",
       padding: token.paddingSM,
-      position: 'relative'
+      position: "relative",
     }),
     canvas: css({
       height: "100%",
@@ -29,11 +30,11 @@ export const Canvas = () => {
   };
 
   return (
-    <div ref={ref} className={classes.main}>
-      <Settings/>
-      <RenderViewSanBox>
-        <DocumentNodes />
-      </RenderViewSanBox>
-    </div>
+      <div ref={ref} className={classes.main}>
+        <Settings />
+        <RenderViewSanBox>
+          <DocumentNodes />
+        </RenderViewSanBox>
+      </div>
   );
 };

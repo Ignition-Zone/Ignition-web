@@ -13,6 +13,8 @@ export default defineConfig((options) => ({
     "react-dom",
     "@craftjs/core",
     "antd",
+    "@mantine/core",
+    "@mantine/hooks",
     "@ant-design/pro-components",
     "lodash",
     "@devtools-ds/object-inspector",

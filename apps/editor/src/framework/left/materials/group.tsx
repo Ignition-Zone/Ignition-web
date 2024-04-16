@@ -1,6 +1,6 @@
 import React from "react";
 import { MaterialProps } from ".";
-import { Badge, Flex, Tag, Typography } from "antd";
+import { Badge, Card, Flex, Tag, Typography } from "antd";
 import { MaterialRecord } from "./record";
 import { css } from "@emotion/css";
 import { Canvas, useEditor } from "@craftjs/core";
@@ -26,10 +26,21 @@ const classes = {
 export const MaterialGroup: React.FC<MaterialGroupProps> = (props) => {
   const { connectors } = useEditor();
 
+  const isEmpty = Object.keys(props.groupList).length === 0;
+
+  if (isEmpty) {
+    return null;
+  }
+
   return (
     <Flex vertical gap={12}>
-      <Flex gap={6}>
+      <Flex justify="flex-start" gap={6}>
         <Typography.Text type="secondary">{props.groupName}</Typography.Text>
+        {isEmpty ? null : (
+          <Tag color="blue" bordered={false}>
+            {Object.keys(props.groupList).length}
+          </Tag>
+        )}
       </Flex>
       <div className={classes.group}>
         {_.map(props.groupList, (value, key: string) => {

@@ -6,13 +6,14 @@ import ReactFrameComponent, {
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
 import { css } from "@emotion/css";
+import { MantineProvider } from "@mantine/core";
 import {
   StyleProvider,
   createCache as createCacheByAntd,
 } from "@ant-design/cssinjs";
-import { Cascader, ConfigProvider, Dropdown, Select, Space } from "antd";
-import { ModalForm, ProFormCascader } from "@ant-design/pro-components";
-import { DownOutlined, SmileOutlined } from "@ant-design/icons";
+
+import styles from "@mantine/core/styles.css?raw";
+import stylelayer from "@mantine/core/styles.layer.css?raw";
 
 export interface IFrameProps {
   children?: React.ReactNode;
@@ -37,11 +38,22 @@ export const IFrame: React.FC<IFrameProps> = (props) => {
       ref={iframeRef}
       head={
         <>
+          <link
+            type="text/css"
+            href="https://cdn.skypack.dev/sanitize.css"
+            rel="stylesheet"
+          />
+          <style
+            dangerouslySetInnerHTML={{
+              __html: styles,
+            }}
+          />
+          <style
+            dangerouslySetInnerHTML={{
+              __html: stylelayer,
+            }}
+          />
           <style>
-            <link
-              href="https://cdn.skypack.dev/sanitize.css"
-              rel="stylesheet"
-            />
             {`
             .editor-component-active {
               position: relative;
@@ -93,21 +105,22 @@ export const IFrame: React.FC<IFrameProps> = (props) => {
             key: "iframe",
             container: _document?.head,
           });
+
           const antdCache = createCacheByAntd();
           return (
-            <ConfigProvider
-              getPopupContainer={() =>
-                _document?.body as any
-              }
-            >
-              <StyleProvider
-                defaultCache={false}
-                container={_document?.body}
-                cache={antdCache}
-              >
-                <CacheProvider value={cache}>{props.children}</CacheProvider>
-              </StyleProvider>
-            </ConfigProvider>
+            <StyleProvider cache={antdCache} container={_document?.head}>
+              <CacheProvider value={cache}>
+                <MantineProvider
+                  withCssVariables
+                  withGlobalClasses
+                  withStaticClasses
+                  getRootElement={() => _document?.documentElement}
+                  cssVariablesSelector="#EditorApp"
+                >
+                  {props.children}
+                </MantineProvider>
+              </CacheProvider>
+            </StyleProvider>
           );
         }}
       </FrameContextConsumer>

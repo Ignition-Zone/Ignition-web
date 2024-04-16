@@ -6,15 +6,16 @@ import {
   StringSetter,
   toOptions,
 } from "@huos/setter";
-import { Button, ButtonProps, Input, Segmented, Select } from "antd";
+import { Input, Segmented, Select } from "antd";
+import { Button, ButtonProps, MantineProvider } from '@mantine/core'
 import { buttonIcon } from '@/assets/icon'
-
 
 export const MUI_Button = createReactMaterial<ButtonProps>(
   (props: ButtonProps, ref: any) => (
-    <Button ref={ref} {...props} >
+    <Button variant="filled" ref={ref} {...props} >
       {props.children}
     </Button>
+    
   ),
   {
     displayName: "按钮",
