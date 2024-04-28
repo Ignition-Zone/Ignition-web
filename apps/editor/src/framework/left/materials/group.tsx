@@ -24,7 +24,7 @@ const classes = {
 };
 
 export const MaterialGroup: React.FC<MaterialGroupProps> = (props) => {
-  const { connectors } = useEditor();
+  const { connectors, actions } = useEditor();
 
   const isEmpty = Object.keys(props.groupList).length === 0;
 
@@ -58,7 +58,12 @@ export const MaterialGroup: React.FC<MaterialGroupProps> = (props) => {
                       <Canvas canvas is={value} />
                     ) : (
                       React.createElement(value)
-                    )
+                    ), {
+                      onCreate: (nodeTee) => {
+                        console.log('nodeTree拖拽结束', nodeTee)
+                        actions.selectNode(nodeTee.rootNodeId);
+                      },
+                    }
                   );
                 }
               }}
