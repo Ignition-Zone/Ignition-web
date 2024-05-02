@@ -23,7 +23,6 @@
 
 # pnpm package npmrc
 .pnpm-debug.log
-pnpm-lock.yaml
 
 # eslint
 .eslintcache
