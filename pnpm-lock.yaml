@@ -106,7 +106,7 @@ importers:
         specifier: ^10.16.4
         version: 10.18.0(react-dom@18.2.0)(react@18.2.0)
       immer:
-        specifier: ^10.0.3
+        specifier: ^10.1.1
         version: 10.1.1
       lodash:
         specifier: ^4.17.21
@@ -314,9 +314,6 @@ importers:
       i18next:
         specifier: ^23.5.1
         version: 23.11.3
-      immer:
-        specifier: ^10.0.3
-        version: 10.1.1
       ky:
         specifier: ^1.2.2
         version: 1.2.4
