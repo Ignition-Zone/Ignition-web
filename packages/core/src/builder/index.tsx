@@ -50,7 +50,8 @@ export const wasmTransformCode = async (code: string) => {
 /**
  * 
  * @param code cjs代码
- * @param dependencies 模块依赖
+ * @param dependencies 模块依赖  当前的依赖的对象，如 react dayjs 这些，在低代码平台中可以使用刚才挂载的 husScope中的 depends对象
+ * 使用Function执行代码时会进行类似 width的操作  可以看到在下面的是实现了 require方法来进行依赖的获取，并且将结果注入到 module字段当中
  */
 export const compileModuleResolve = (
   code: string,

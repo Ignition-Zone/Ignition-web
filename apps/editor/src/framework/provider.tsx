@@ -7,8 +7,9 @@ import { ReactQeuryProvider } from "./common/react-query";
 import { I18nextProvider } from "react-i18next";
 import { useEditorState } from './stores/useEditorState'
 import i18n from "./utils/i18n";
-import { __Provider__ } from "@/framework/components";
 
+// @/framework/components 下  button  view
+import { __Provider__ } from "@/framework/components";
 
 import { LayoutMaterials, BaseMaterials,  DataDisplayMaterials, DataEntryMaterials, OtherMaterials, FeedbackMaterials, NavMaterials} from '@huos/mui'
 import _ from "lodash";
@@ -41,6 +42,7 @@ export const EditoRootWrapper: React.FC<EditoRootWrapperProps> = (props) => {
    */
   const handleEditorChange: Options["onNodesChange"] = (query) => {
     const serNodes = query.getSerializedNodes();
+    console.log('handleEditorChange:',serNodes)
     onSetEditorState(serNodes)
   };
 

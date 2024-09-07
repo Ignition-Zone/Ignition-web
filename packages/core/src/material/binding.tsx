@@ -18,16 +18,27 @@ export const useParseBinding = (
   const { t } = useTranslation();
   const store = useCreateStore((selector) => selector.data);
 
+
+  // React.useMemo 
   const memoizedProps = React.useMemo(() => {
     function evaluateProps(value: Record<string, any>) {
-      if (typeof value === "object" && value !== null && "$$jsx" in value) {
+      if (typeof value === "object" && value !== null && "$$children" in value) {
         try {
+          // example
+        var evalExample =   window.eval(`
+            (() => {
+              with ({hous:{state:{title:123456}}}) {
+                return (hous.state.title)
+              }
+            })()
+          `);
           // 注意: eval在这里可能是不安全的!
-          return jsRuntime.execute(value.$$jsx, {
+          return jsRuntime.execute(value.$$children.$$jsx, {
             huos: {
               t,
               app,
-              $state: store,
+              // $state: store,
+              state: store,
             },
           })?.value;
         } catch {
@@ -44,19 +55,30 @@ export const useParseBinding = (
         return value;
       }
     }
-
+    var propsExample = {
+      "$$children": {
+          "$$jsx": "huos.state.title"
+      }
+  }
+  var storeExample = {
+    "app": {
+        "title": "Title1"
+    }
+}
+    console.log('binding.tsx:',props,store)
     return evaluateProps(props);
   }, [props, store]);
 
   const memoizedEvents = React.useMemo(() => {
     const eventMap: Record<string, Function> = {};
+    // 事件处理
     if (Array.isArray(events)) {
       _.forEach(events, ({ name = "", fn = "" }) => {
         const runFun = jsRuntime.execute(fn, {
           huos: {
-            t,
+            t, // 多语言
             app,
-            getState: useCreateStore.getState,
+            getState: useCreateStore.getState, // 全局状态
           },
         })?.value;
 

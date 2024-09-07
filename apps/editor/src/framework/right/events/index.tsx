@@ -68,6 +68,7 @@ export const EventsPanel = () => {
     const { events } = formData
 
     if (nodeId) {
+      console.log('__events__:',events)
       actions.setProp(nodeId, (setterProps) => {
         return merge(setterProps, {
           __events__: events

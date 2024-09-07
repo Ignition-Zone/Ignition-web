@@ -29,6 +29,7 @@ export interface ExpressionModalProps {
 }
 
 export const ExpressionModal: React.FC<ExpressionModalProps> = (props) => {
+  console.log("ExpressionModal:",props)
   const [editing, setEditing] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const [code, setCode] = React.useState<string>()

@@ -49,6 +49,7 @@ export const RenderFieldSetter: React.FC<RenderFieldSetterProps> = ({
           <ProFormDependency name={[namePath]}>
             {(_value, _form) => {
               const fieldValue = _.get(_value, props.name + ".$$jsx");
+              console.log('ProFormDependency:',fieldValue)
               return (
                 <Flex flex={1} justify="flex-end" align="center" gap={12}>
                   {fieldValue ? (
