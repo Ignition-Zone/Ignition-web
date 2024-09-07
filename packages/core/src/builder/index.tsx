@@ -27,25 +27,9 @@ export const sucraseTransformCode = async (code: string): Promise<string> => {
   });
 };
 
-/**
- * babel 的编译器
- * @description 比其他编译会慢一些，但是更加健壮稳定
- * @param code 需要编译的代码,
- */
-export const babelTransformCode = async (code: string) => {
-  // todo...
-  return code;
-};
 
-/**
- * wasm容器打包方案
- * @description 激进策略，需要支持wasm, 且加载一个wasm容器。
- * @param code 需要编译的代码,
- */
-export const wasmTransformCode = async (code: string) => {
-  // todo...
-  return code;
-};
+
+
 
 /**
  * 

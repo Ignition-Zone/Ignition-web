@@ -3,7 +3,6 @@ import _ from "lodash";
 import { jsRuntime } from "../runtime";
 import { useTranslation } from "react-i18next";
 import { useCreateStore } from "../state";
-import { useDebounceEffect, useThrottleEffect } from "ahooks";
 import { App } from "antd";
 
 export const useParseBinding = (

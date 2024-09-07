@@ -1,5 +1,5 @@
 import React from "react";
-import { Node, UserComponent, UserComponentConfig, useNode } from "@craftjs/core";
+import { UserComponent, UserComponentConfig, useNode } from "@craftjs/core";
 import { ErrorBoundary } from "react-error-boundary";
 import { useParseBinding } from "./binding";
 import { EmptySetter } from "./empty";
