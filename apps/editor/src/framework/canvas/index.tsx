@@ -5,7 +5,7 @@ import { IFrame as RenderViewSanBox } from "./iframe";
 import { DocumentNodes } from "./document";
 import { useEditorKeyPress } from "../hooks/use-keyword-panel";
 import { Settings } from "../settings";
-import { MantineProvider } from "@mantine/core";
+
 
 export const Canvas = () => {
   const ref = React.useRef<HTMLDivElement>(null);

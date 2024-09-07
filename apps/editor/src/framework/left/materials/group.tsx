@@ -1,6 +1,6 @@
 import React from "react";
 import { MaterialProps } from ".";
-import { Badge, Card, Flex, Tag, Typography } from "antd";
+import { Flex, Tag, Typography } from "antd";
 import { MaterialRecord } from "./record";
 import { css } from "@emotion/css";
 import { Canvas, useEditor } from "@craftjs/core";
