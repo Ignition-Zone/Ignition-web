@@ -1,0 +1,47 @@
+{
+    "version": "1.0.0",
+    "librarys": [],
+    "i18n": {
+      "zh": {},
+      "eu": {}
+    },
+    "store": {},
+    "dataSource": {},
+    "lifeCycles": {},
+    "htmlBody": {
+    "ROOT": {
+      "type": {
+        "resolvedName": "Container"
+      },
+      "props": {
+        "width": 800,
+        "height": "100%",
+        "paddingTop": 20,
+        "paddingBottom": 20,
+        "paddingLeft": 20,
+        "paddingRight": 20,
+        "background": "#FFFFFF"
+      },
+      "displayName": "基础容器",
+      "custom": {},
+      "hidden": false,
+      "nodes": [
+        "rpVYvatknx"
+      ],
+      "linkedNodes": {}
+    },
+    "rpVYvatknx": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "props": {},
+      "displayName": "文本",
+      "custom": {},
+      "parent": "ROOT",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    }
+  }
+  }
+  
