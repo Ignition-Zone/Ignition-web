@@ -5,7 +5,7 @@ import { App, Button } from "antd";
 import _ from "lodash";
 import request from '@/framework/utils/request'
 import { useParams } from 'react-router-dom'
-
+import { getHuosScopeJsModule } from "@huos/core";
 export const Publish = () => {
 
   const { query } = useEditor()
@@ -20,15 +20,17 @@ export const Publish = () => {
 
   const handlePublishSchame = async () => {
     const serialize = query.serialize()
+    console.log('handlePublishSchame:',serialize)
     onChangeSchema('schema', serialize)
 
     const newSchema: typeof pageSchema = {
       ...pageSchema,
       schema: serialize
     }
-
+    console.log('handlePublishSchame:',newSchema)
+    console.log('getHuosScopeJsModule:',getHuosScopeJsModule())
     const josnState = stringifyLzUtfData(JSON.stringify(newSchema))
-
+    
     const data = await request({
       url: `/save/${params?.id}`,
       method: 'PUT',

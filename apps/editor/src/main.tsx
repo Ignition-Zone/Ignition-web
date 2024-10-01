@@ -49,9 +49,9 @@ const components = {
     fontWeightStrong: 400,
   },
 };
-
+// 为组件提供统一的全局化配置。
 ReactDOM.createRoot(document.getElementById("EditorApp")!).render(
-  <ConfigProvider
+  <ConfigProvider   
     theme={{
       token,
       components,

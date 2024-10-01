@@ -52,8 +52,9 @@ const withConnectNode = (
       })
     });
     console.log('__events__:',__events__)
+    console.log('props:',props)
     const memoizdProps = useParseBinding(props, __events__);
-    console.log('memoizdProps:',memoizdProps)
+    console.log('memoizdProps:',memoizdProps)  // {"size": "large"}
     const renderChildRen = memoizdProps?.$$children || children
 
     return (

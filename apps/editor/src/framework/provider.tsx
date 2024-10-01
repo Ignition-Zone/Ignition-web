@@ -11,10 +11,10 @@ import i18n from "./utils/i18n";
 // @/framework/components 下  button  view
 import { __Provider__ } from "@/framework/components";
 
-import { LayoutMaterials, BaseMaterials,  DataDisplayMaterials, DataEntryMaterials, OtherMaterials, FeedbackMaterials, NavMaterials} from '@huos/mui'
+import { BaseMaterials} from '@huos/mui'
 import _ from "lodash";
 
-const resolver = _.assign({__Provider__}, LayoutMaterials, BaseMaterials,  DataDisplayMaterials, DataEntryMaterials, OtherMaterials, FeedbackMaterials, NavMaterials)
+const resolver = _.assign({__Provider__},BaseMaterials )
 
 export interface EditoRootWrapperProps extends Partial<Options> {
   // 本地storageKey, 用户缓存当前
@@ -28,11 +28,14 @@ export const EditoRootWrapper: React.FC<EditoRootWrapperProps> = (props) => {
 
   // 初始化js模块
   React.useEffect(() => {
+    // 编译加载 动态js
+    console.log('jsRuntime.mountJsMoudle:',jsMoudleCode)
     jsRuntime.mountJsMoudle(jsMoudleCode);
   }, [jsMoudleCode]);
 
   // 默认状态发生变化
   React.useEffect(() => {
+    console.log('storeMap:',storeMap)
     onChangeStore(storeMap)
   }, [storeMap])
 

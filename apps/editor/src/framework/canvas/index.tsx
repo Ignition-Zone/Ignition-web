@@ -31,7 +31,8 @@ export const Canvas = () => {
 
   return (
       <div ref={ref} className={classes.main}>
-        <Settings />
+        <Settings /> 
+        
         <RenderViewSanBox>
           <DocumentNodes />
         </RenderViewSanBox>

@@ -31,11 +31,11 @@ export const Framework = () => {
         <Header />
         {/** 编辑器主体 */}
         <div id="EditorContent" className={classes.main}>
-          {/* 左侧面板 */}
-          <Left />
+          {/* 左侧面板 被createReactMaterial 包裹的组件 */}
+          <Left />  
           {/* 画布 */}
           <Canvas />
-          {/* 右侧 */}
+          {/* 右侧 属性面板的大框架,用于渲染选中组件的 settingRender */}
           <Right />
         </div>
       </div>
